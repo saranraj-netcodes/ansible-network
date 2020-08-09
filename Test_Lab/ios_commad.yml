@@ -1,0 +1,12 @@
+---
+- name: Exercise 3a
+  hosts: cisco
+  gather_facts: False
+  tasks:
+    - name: Gather show version output
+      ios_command:
+        commands: show version
+      register: show_version
+
+    - debug:
+        var: show_version
