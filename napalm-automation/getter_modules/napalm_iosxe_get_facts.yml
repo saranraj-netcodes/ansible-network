@@ -1,0 +1,11 @@
+---
+- name: NAPALM IOS-XE gettter modules
+  hosts: cisco3
+  gather_facts: False
+  tasks:
+    - name: napalm get_facts
+      napalm_get_facts:
+        filter: facts,interfaces,lldp_neighbors
+
+    - debug:
+        msg: "{{ hostvars[inventory_hostname] }}"

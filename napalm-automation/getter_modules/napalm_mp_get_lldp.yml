@@ -1,0 +1,14 @@
+---
+- name: NAPALM get_lldp_neighbors
+  hosts: cisco:arista:juniper:nxos
+  gather_facts: False
+  tasks:
+    - name: LLDP
+      napalm_get_facts:
+        filter: lldp_neighbors
+        optional_args:
+          port: "{{ napalm_port }}"
+      register: output
+
+    - debug:
+        var: napalm_lldp_neighbors
