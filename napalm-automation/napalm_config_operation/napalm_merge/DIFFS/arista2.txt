@@ -1,0 +1,18 @@
+@@ -44,11 +44,14 @@
+ !
+ interface Ethernet8
+ !
+-interface Loopback98
+-   ip address 10.1.98.2/24
+-!
+ interface Loopback99
+    ip address 10.1.99.2/24
++!
++interface Loopback100
++   ip address 10.1.100.2/24
++!
++interface Loopback101
++   ip address 10.1.101.2/24
+ !
+ interface Management1
+    ip address 192.168.1.209/24

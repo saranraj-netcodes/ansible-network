@@ -1,0 +1,10 @@
+---
+- name: napalm config merge from file
+  hosts: arista
+  gather_facts: False
+  tasks:
+    - napalm_install_config:
+        replace_config: False
+        commit_changes: True
+        config_file: "CFGS/{{ inventory_hostname }}-merge.txt"
+        diff_file: "DIFFS/{{ inventory_hostname }}.txt"

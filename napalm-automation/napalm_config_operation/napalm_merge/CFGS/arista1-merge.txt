@@ -1,0 +1,5 @@
+interface Loopback100
+    ip address 10.1.100.1/24
+interface Loopback101
+    ip address 10.1.101.1/24
+no interface Loopback98
