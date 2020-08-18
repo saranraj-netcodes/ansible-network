@@ -1,0 +1,21 @@
+---
+- name: Exercise 1
+  hosts: cisco
+  gather_facts: False
+  tasks:
+    - name: Configure Banner For Cisco
+      ios_banner:
+        banner: login
+        text: |
+          ---------------------------------
+            EVE-NG - Automation - LAB001
+           WARNING: no Unauthorised access
+          ---------------------------------
+        state: present
+      notify: write mem
+
+  handlers: 
+    - name: write mem
+      ios_command:
+        commands: write mem
+      changed_when: True
