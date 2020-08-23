@@ -1,0 +1,12 @@
+---
+- name: Retrieve arista config
+  hosts: arista
+  gather_facts: False
+  tasks:
+    - name: Get Facts
+      napalm_get_facts:
+        filter: config
+    - name: Save Config
+      copy:
+        content: "{{ napalm_config.running }}"
+        dest: "CFGS/{{ inventory_hostname}}.txt"
