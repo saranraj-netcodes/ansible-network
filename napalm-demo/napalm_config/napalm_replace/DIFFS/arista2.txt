@@ -1,0 +1,34 @@
+@@ -5,6 +5,9 @@
+ transceiver qsfp default-mode 4x10G
+ !
+ hostname arista2
++ip name-server vrf default 8.8.4.4
++ip name-server vrf default 8.8.8.8
++ip domain-name netlab.local
+ !
+ ntp server 130.126.24.24
+ ntp server 152.2.21.1
+@@ -48,20 +51,11 @@
+ interface Loopback99
+    ip address 10.1.99.2/24
+ !
+-interface Loopback100
+-   ip address 10.1.100.2/24
+-!
+-interface Loopback101
+-   ip address 10.1.101.2/24
+-!
+-interface Loopback110
+-   ip address 10.1.110.2/24
+-!
+-interface Loopback111
+-   ip address 10.1.111.2/24
+-!
+ interface Management1
+    ip address 192.168.1.209/24
++!
++interface Vlan7
++   ip address 10.7.1.2/24
+ !
+ ip routing
+ !

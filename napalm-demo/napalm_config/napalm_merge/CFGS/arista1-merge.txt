@@ -1,0 +1,4 @@
+interface Loopback120
+    ip address 10.1.120.1/24
+interface Loopback121
+    ip address 10.1.121.1/24

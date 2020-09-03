@@ -1,0 +1,11 @@
+---
+- name: NAPALM get_bgp_neighbors
+  hosts: cisco1:cisco2
+  gather_facts: False
+  tasks:
+    - name: BGP Neighbors
+      napalm_get_facts:
+        filter: bgp_neighbors
+    - name: Print BGP Neibors
+      debug:
+        var: napalm_bgp_neighbors

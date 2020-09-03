@@ -1,0 +1,11 @@
+---
+- get_bgp_neighbors:
+    global:
+      peers:
+        _mode: strict
+        10.220.88.38:
+          is_enabled: true
+          address_family:
+            ipv4 unicast:
+              sent_prefixes: 3
+              received_prefixes: '<5'

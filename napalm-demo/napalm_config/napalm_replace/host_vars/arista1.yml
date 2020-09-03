@@ -1,0 +1,5 @@
+---
+loopback_ip: 10.1.99.1/24
+mgmt_ip: 192.168.1.208/24
+vlan_7: 10.7.1.1/24
+secret: $6$Fdd9bf0eCODEoVVK$0KlCYa2LIP9LuNyb2L0hDFNIrtW5ShHb5pvoMe8GfGeKrrdvr6DRSuFlUE6La5iPF9c.XUofkPUAYsQjJh3i91

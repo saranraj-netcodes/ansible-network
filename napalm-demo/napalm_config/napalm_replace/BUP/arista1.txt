@@ -1,0 +1,60 @@
+! Command: show running-config
+! device: arista1 (vEOS, EOS-4.21.1.1F)
+!
+! boot system flash:/vEOS-lab.swi
+!
+transceiver qsfp default-mode 4x10G
+!
+hostname arista1
+!
+ntp server 130.126.24.24
+ntp server 152.2.21.1
+!
+spanning-tree mode rapid-pvst
+!
+aaa authorization exec default local
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$Fdd9bf0eCODEoVVK$0KlCYa2LIP9LuNyb2L0hDFNIrtW5ShHb5pvoMe8GfGeKrrdvr6DRSuFlUE6La5iPF9c.XUofkPUAYsQjJh3i91
+!
+clock timezone Australia/Melbourne
+!
+vlan 2-7
+!
+interface Ethernet1
+   spanning-tree portfast
+   spanning-tree cost 1
+!
+interface Ethernet2
+   switchport access vlan 2
+!
+interface Ethernet3
+   switchport access vlan 3
+!
+interface Ethernet4
+   switchport access vlan 4
+!
+interface Ethernet5
+   switchport access vlan 5
+!
+interface Ethernet6
+   switchport access vlan 6
+!
+interface Ethernet7
+   switchport access vlan 7
+!
+interface Ethernet8
+!
+interface Loopback99
+   ip address 10.1.99.1/24
+!
+interface Management1
+   ip address 192.168.1.208/24
+!
+ip routing
+!
+management api http-commands
+   no shutdown
+!
+end

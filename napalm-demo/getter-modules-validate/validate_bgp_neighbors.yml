@@ -1,0 +1,7 @@
+---
+- name: BGP Neighbor Validation
+  hosts: cisco1:cisco2
+  gather_facts: False
+  tasks:
+    - napalm_validate:
+        validation_file: "validate/{{ inventory_hostname }}/bgp_validation.yml"

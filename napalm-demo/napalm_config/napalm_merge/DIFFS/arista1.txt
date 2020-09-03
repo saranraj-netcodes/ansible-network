@@ -1,0 +1,13 @@
+@@ -48,6 +48,12 @@
+ interface Loopback99
+    ip address 10.1.99.1/24
+ !
++interface Loopback120
++   ip address 10.1.120.1/24
++!
++interface Loopback121
++   ip address 10.1.121.1/24
++!
+ interface Management1
+    ip address 192.168.1.208/24
+ !

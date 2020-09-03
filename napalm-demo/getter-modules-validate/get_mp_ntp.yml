@@ -1,0 +1,14 @@
+---
+- name: NAPALM get_ntp_servers
+  hosts: cisco:arista:juniper:nxos
+  gather_facts: False
+  tasks:
+    - name: NTP Servers
+      napalm_get_facts:
+        filter: ntp_servers
+        optional_args:
+          port: "{{ napalm_port }}"
+      register: output
+
+    - debug:
+        var: napalm_ntp_servers
